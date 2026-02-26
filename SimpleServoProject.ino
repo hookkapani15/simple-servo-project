@@ -53,7 +53,7 @@ void writeServoPair(int axisIdx, int angle) {
 // =======================
 // Smooth eased move (Absolute Position)
 // =======================
-void moveServoSmooth(int axisIdx, int target, int totalDelay, int smoothPct) {
+void moveServoSmooth(int axisIdx, int target, int totalDelay, int smoothPct, bool skipHold = false) {
   target = constrain(target, 0, 270);
   int from = angles[axisIdx];
   angles[axisIdx] = target;
@@ -72,8 +72,8 @@ void moveServoSmooth(int axisIdx, int target, int totalDelay, int smoothPct) {
     delay(moveDuration / steps);
   }
 
-  if (holdDuration > 0)
-    delay(holdDuration);
+  if (!skipHold && holdDuration > 0)
+  delay(holdDuration);
 
   Serial.print("Axis ");
   Serial.print(axisIdx);
@@ -108,7 +108,7 @@ void setup() {
 void loop() {
   delay(1000);
 
-  moveServoSmooth(2, 0, 2000, smoothnessFast);
+  moveServoSmooth(2, 0, 1200, 100, true);
   moveServoSmooth(2, 230, 2000, smoothnessFast);
 
   moveServoSmooth(0, 220, 1000, smoothnessSlow);
