@@ -27,7 +27,7 @@ const int clusterD[3] = {3, 7, 11};
 // Smoothness
 // =======================
 int smoothnessFast = 90;
-int smoothnessSlow = 80;
+int smoothnessSlow = 90;
 
 // =======================
 // Convert angle → PWM
@@ -108,28 +108,28 @@ void setup() {
 void loop() {
   delay(1000);
 
-  moveServoSmooth(2, 0, 1200, 100, true);
-  moveServoSmooth(2, 230, 2000, smoothnessFast);
+  moveServoSmooth(2, 0, 1900, 100, true);
+  moveServoSmooth(2, 230, 1250, smoothnessFast);
 
-  moveServoSmooth(0, 220, 1000, smoothnessSlow);
-  moveServoSmooth(1, 70, 1000, smoothnessSlow);
-  moveServoSmooth(1, 120, 1000, smoothnessSlow);
-  moveServoSmooth(1, 170, 1000, smoothnessSlow);
-  moveServoSmooth(1, 120, 1000, smoothnessSlow);
+  moveServoSmooth(0, 220, 600, smoothnessSlow);
+  moveServoSmooth(1, 70, 600, smoothnessSlow);
+  moveServoSmooth(1, 120, 600, smoothnessSlow);
+  moveServoSmooth(1, 170, 600, smoothnessSlow);
+  moveServoSmooth(1, 120, 600, smoothnessSlow);
 
-  moveServoSmooth(0, 160, 1000, smoothnessSlow);
-  moveServoSmooth(1, 70, 1000, smoothnessSlow);
-  moveServoSmooth(1, 120, 1000, smoothnessSlow);
-  moveServoSmooth(1, 170, 1000, smoothnessSlow);
-  moveServoSmooth(1, 120, 1000, smoothnessSlow);
+  moveServoSmooth(0, 160, 600, smoothnessSlow);
+  moveServoSmooth(1, 70, 600, smoothnessSlow);
+  moveServoSmooth(1, 120, 600, smoothnessSlow);
+  moveServoSmooth(1, 170, 600, smoothnessSlow);
+  moveServoSmooth(1, 120, 600, smoothnessSlow);
 
-  moveServoSmooth(0, 130, 1000, smoothnessSlow);
-  moveServoSmooth(1, 70, 1000, smoothnessSlow);
-  moveServoSmooth(1, 120, 1000, smoothnessSlow);
-  moveServoSmooth(1, 170, 1000, smoothnessSlow);
-  moveServoSmooth(1, 120, 1000, smoothnessSlow);
+  moveServoSmooth(0, 130, 750, smoothnessSlow);
+  moveServoSmooth(1, 70, 600, smoothnessSlow);
+  moveServoSmooth(1, 120, 600, smoothnessSlow);
+  moveServoSmooth(1, 170, 600, smoothnessSlow);
+  moveServoSmooth(1, 120, 600, smoothnessSlow);
 
-  moveServoSmooth(0, 160, 1000, smoothnessSlow);
+  moveServoSmooth(0, 160, 600, smoothnessSlow);
 
 
   
